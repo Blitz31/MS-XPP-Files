@@ -1,0 +1,18 @@
+ # simple ode - uncoupled
+
+x1' = w1
+x2' = w2
+x3' = w3
+x4' = w4
+x5' = w5
+global 1 x1-5*pi {x1=0;x2=x2+e21*sin(x2);x3=x3+e31*sin(x3);x4=x4+e41*sin(x4);x5=x5+e51*sin(x5)}
+global 1 x2-5*pi {x2=0;x3=x3+e32*sin(x3);x1=x1+e12*sin(x1);x4=x4+e42*sin(x4);x5=x5+e52*sin(x5)}
+global 1 x3-5*pi {x3=0;x2=x2+e23*sin(x2);x1=x1+e13*sin(x1);x4=x4+e43*sin(x4);x5=x5+e53*sin(x5)}
+global 1 x4-5*pi {x4=0;x2=x2+e24*sin(x2);x1=x1+e14*sin(x1);x3=x3+e34*sin(x3);x5=x5+e54*sin(x5)}
+global 1 x5-5*pi {x5=0;x2=x2+e25*sin(x2);x1=x1+e15*sin(x1);x3=x3+e35*sin(x3);x4=x4+e45*sin(x4)}
+init x1=12.56,x2=9.42,x3=6.28,x4=3.14,x5=0
+par w1=1,w2=1,w3=1,w4=1,w5=1,e21=0.2,e32=0.2,e12=0.2,e23=0.2,e13=0.2,e31=0.2,e24=0.2,e14=0.2,e34=0.2,e41=0.2,e42=0.2,e43=0.2,e45=0.2,e51=0.2,e52=0.2,e53=0.2,e54=0.2,e15=0.2,e25=0.2,e35=0.2
+@ method=cvode,total=140, dt=0.05
+done
+ 
+
