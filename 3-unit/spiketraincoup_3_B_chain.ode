@@ -1,0 +1,15 @@
+ # simple ode - uncoupled
+
+x1' = w1
+x2' = w2
+x3' = w3
+global 1 x1-2*pi {x1=0;x2=x2-e21*sin(x2)}
+global 1 x2-2*pi {x2=0;x3=x3-e32*sin(x3);x1=x1-e12*sin(x1)}
+global 1 x3-2*pi {x3=0}
+init x1=0,x2=0,x3=0
+par w1=1,w2=1.02,w3=1.03,e21=0.2,e32=0.15,e12=0.3
+
+@ method=cvode,total=80, dt=0.005
+done
+ 
+

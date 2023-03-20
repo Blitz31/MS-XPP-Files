@@ -1,0 +1,19 @@
+ # 4-unit -ve coupling
+
+x1' = w1
+x2' = w2
+x3' = w3
+x4' = w4
+
+global 1 x1-2*pi {x1=0;x2=x2-e21*sin(x2);x3=x3-e31*sin(x3);x4=x4-e41*sin(x4)}
+global 1 x2-2*pi {x2=0;x3=x3-e32*sin(x3);x1=x1-e12*sin(x1);x4=x4-e42*sin(x4)}
+global 1 x3-2*pi {x3=0;x2=x2-e23*sin(x2);x1=x1-e13*sin(x1);x4=x4-e43*sin(x4)}
+global 1 x4-2*pi {x4=0;x2=x2-e24*sin(x2);x1=x1-e14*sin(x1);x3=x3-e34*sin(x3)}
+
+init x1=4.8,x2=3.2,x3=1.6,x4=0
+par w1=1,w2=1,w3=1,w4=1,e21=0.2,e32=0.2,e12=0.2,e23=0.2,e13=0.2,e31=0.2,e41=0.2,e42=0.2,e43=0.2,e14=0.2,e24=0.2,e34=0.2
+
+@ method=cvode,total=80, dt=0.005
+done
+ 
+
